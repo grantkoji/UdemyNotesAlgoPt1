@@ -275,14 +275,34 @@ function maxSubarraySum(arr, num) {
     let tempSum = 0;
     if (arr.length < num) return null;
     for (let i = 0; i < num; i++) {
+        maxSum += arr[i]
+    }
+    for (let i = num; i < arr.length; i++) {
         tempSum = tempSum - arr[i-num] + arr[i];
         maxSum = Math.max(maxSum, tempSum);
     }
     return maxSum;
 }
 
+Two points starting from the left
 
+Updating first pointer only on condition
 
+Two unique values that do not match 
+
+// function countUniqueValues(arr) {
+//     var i = 0;
+//     for (var j=1; j < arr.length; j++) {
+//         arr[i] arr[j]
+//     }
+// }
+// [1, 1, 2, 3,]
+
+Longest string of unique characters 
+'hellothere'
+
+Looks like it's going to be our longest string of unique charactes '
+Finding a max subarray sum 
 
 
 
