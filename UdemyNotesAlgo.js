@@ -304,5 +304,77 @@ Longest string of unique characters
 Looks like it's going to be our longest string of unique charactes '
 Finding a max subarray sum 
 
+Divide and Conquer 
+Binary search 
+Pick a large array 
+If it's sorted' Need a sorted array for this to work 
+If we knew the value we were looking for is large 
 
 
+function search(arr, val) {
+    for (i=0; i< arr.length; i++){
+        if (arr[i] === val) {
+            return i
+        }
+    }
+    return -1
+}
+
+Binary search
+Takes in sorted array
+
+function binarySearch(arr, val) {
+    let min = 0;
+    let max = array.length - 1
+    while (min <= max) {
+        let middle = Math.floor((min+max) / 2);
+        let currentElement = array[middle];
+    
+        if (array[middle] < val) {
+            min = middle + 1;
+        } else if (array[middle > val]) {
+            max = middle - 1;
+        } else {
+            return middle
+        }
+    }
+    return -1;
+}
+
+
+sameFrequency
+Given two positive integers, find out if 
+the two numbers have the same frequency of digits 
+
+Time: O(N)
+
+sameFrequency(182,281) //true
+sameFrequency(34,14) //false
+
+function sameFrequency(num1, num2){
+    // good luck. Add any arguments you deem necessary.
+    let num1String = num1.toString()
+    let num2String = num2.toString()
+    if (num1String.length !== num2String.length) {
+        return false;
+    }
+    
+    let frequencyCounter1 = {}
+    let frequencyCounter2 = {}
+    
+    for (let val of num1String){
+        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
+    }
+    
+    for (let val of num2String){
+        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1;
+    }
+    
+    for (let key in frequencyCounter1) {
+        if (frequencyCounter1[key] !== frequencyCounter2[key]) {
+            return false;
+        }
+      }
+   return true;
+  }
+  
