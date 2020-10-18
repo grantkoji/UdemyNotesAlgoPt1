@@ -377,4 +377,43 @@ function sameFrequency(num1, num2){
       }
    return true;
   }
+
+  function areThereDuplicates(arr) {
+    // good luck. (supply any arguments you deem necessary.)
+    let frequencyCounter = {}
+    for (let i=0; i < arr.length; i++) {
+      let value = arr[i]
+      frequencyCounter[value] = (frequencyCounter[value] || 0) + 1;
+    }
+    
+  //   for (let i=0; i< frequencyCounter.length; i++) {
+  //       if (frequencyCounter[i] > 1) {
+  //           return true
+  //       }
+  //   }
+      for (let key in frequencyCounter) {
+          if (frequencyCounter[key] > 1) {
+              return true;
+          }
+        }
+  
+    return false;
+  }
+  
+
+
+  function areThereDuplicates(arr) {
+    let frequencyCounter = {}
+    for (let i=0; i < arr.length; i++) {
+      let value = arr[i]
+      frequencyCounter[value] = (frequencyCounter[value] || 0) + 1;
+    }
+    for (let key in frequencyCounter) {
+        if (frequencyCounter[key] > 1) {
+            return true;
+        }
+    }
+  
+    return false;
+  }
   
